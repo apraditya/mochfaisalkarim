@@ -1,0 +1,69 @@
+<section id="publications">
+  <div class="container">
+    <div class="page-header">
+      <h1>Publications</h1>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ol>
+          <li><a href="#journal-articles">Journal Articles</a></li>
+          <li><a href="#book-chapter">Book Chapter</a></li>
+          <li><a href="#under-review">Under Review</a></li>
+          <li><a href="#working-papers">Working Papers</a></li>
+          <li><a href="#comentaries">Comentaries</a></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="page-header">
+      <h2 class="text-left" id="journal-articles">Journal Articles</h2>
+    </div>
+
+    <ul class="media-list">
+      {% for journal in site.data.journals %}
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              {% if journal.imageUrl %}
+                <img class="media-object" src="{{ journal.imageUrl }}" alt="{{ journal.title }}">
+              {% endif%}
+            </a>
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading text-left">
+              {{ journal.title }}
+              <br />
+              <small>{{ journal.intro }}</small>
+            </h3>
+
+            <hr />
+
+            <p class="text-justify">{{ journal.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+
+    <h2 class="text-left" id="book-chapter">Book Chapter</h2>
+
+
+
+    <h2 class="text-left" id="under-review">Under Review</h2>
+
+
+
+    <h2 class="text-left" id="working-papers">Working Papers</h2>
+
+
+
+    <h2 class="text-left" id="comentaries">Comentaries</h2>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+      </div>
+    </div>
+
+  </div>
+</section>

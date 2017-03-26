@@ -164,6 +164,19 @@ body {
   font-size: 18px;
 }
 
+#publications {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+#publications .media-left {
+  padding-right: 20px;
+}
+
+#publications h2, #publications h3 {
+  text-align: left;
+}
+
 /* Footer 
 -------------------------------------------------- */
 
