@@ -11,17 +11,20 @@ safe: true
 
 
 # edit here to achieve your personal greatness
-url: http://apraditya.github.io/
+url: https://apraditya.github.io/
 baseurl: /mochfaisalkarim/
 title: Moch Faisal Karim
 author: Moch Faisal Karim
 description: Personal blog and resume
 avatar: profile.jpg
 # github: biomadeira/sustain # username
+academia: https://warwick.academia.edu/MochFaisalKarim
+google_scholar: https://scholar.google.co.uk/citations?user=4b2i5qIAAAAJ&hl=en&oi=ao
+orcid: https://orcid.org/0000-0002-5444-2141
 twitter: ical_karim
 linkedin: moch-faisal-karim-35267813
 # stackoverflow: username   #e.g: users/2735833/proton1h1
-#Comment out if you don't want disqus 
+#Comment out if you don't want disqus
 # disqus: username
 # google_analytics: UA-69391421-1
 
