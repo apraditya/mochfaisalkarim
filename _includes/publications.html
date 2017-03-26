@@ -34,7 +34,17 @@
             <h3 class="media-heading text-left">
               {{ journal.title }}
               <br />
-              <small>{{ journal.intro }}</small>
+              <small>
+                {{ journal.intro }}
+                {% if journal.url %}
+                  &nbsp; | &nbsp;
+                  <a href="{{ journal.url }}" target="_blank" title="More info"><i class="fa fa-external-link"></i></a>
+                {% endif %}
+                {% if journal.pdfUrl %}
+                  &nbsp; | &nbsp;
+                  <a href="{{ journal.pdfUrl }}" target="_blank" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
+                {% endif %}
+              </small>
             </h3>
 
             <hr />
@@ -48,20 +58,111 @@
 
     <h2 class="text-left" id="book-chapter">Book Chapter</h2>
 
+    <ul class="media-list">
+      {% for bookChapter in site.data.book_chapters %}
+        <li class="media">
+          <div class="media-left">
+            <a href="#">
+              {% if bookChapter.imageUrl %}
+                <img class="media-object" src="{{ bookChapter.imageUrl }}" alt="{{ bookChapter.title }}">
+              {% endif%}
+            </a>
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading text-left">
+              {{ bookChapter.title }}
+              <br />
+              <small>
+                {{ bookChapter.intro }}
+                {% if bookChapter.url %}
+                  &nbsp; | &nbsp;
+                  <a href="{{ bookChapter.url }}" target="_blank" title="More info"><i class="fa fa-external-link"></i></a>
+                {% endif %}
+                {% if bookChapter.pdfUrl %}
+                  &nbsp; | &nbsp;
+                  <a href="{{ bookChapter.pdfUrl }}" target="_blank" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
+                {% endif %}
+              </small>
+            </h3>
+
+            <hr />
+
+            <p class="text-justify">{{ bookChapter.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
 
 
     <h2 class="text-left" id="under-review">Under Review</h2>
 
+    <ul class="media-list imageless">
+      {% for review in site.data.under_reviews %}
+        <li class="media">
+          <div class="media-left">
+            <h3 class="media-heading text-left">
+              {{ review.title }}
+              <br />
+              <small>
+                {{ review.intro }}
+              </small>
+            </h3>
+          </div>
+
+          <div class="media-body">
+            <p class="text-justify">{{ review.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
 
 
     <h2 class="text-left" id="working-papers">Working Papers</h2>
 
+    <ul class="media-list imageless">
+      {% for workingPaper in site.data.working_papers %}
+        <li class="media">
+          <div class="media-left">
+            <h3 class="media-heading text-left">
+              {{ workingPaper.title }}
+              <br />
+              <small>
+                {{ workingPaper.intro }}
+              </small>
+            </h3>
+          </div>
+
+          <div class="media-body">
+            <p class="text-justify">{{ workingPaper.description }}</p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
 
 
     <h2 class="text-left" id="comentaries">Comentaries</h2>
 
+    <div class="panel-body">
+      <ol>
+        <li><a href="https://theconversation.com/south-east-asia-takes-stock-after-a-year-of-alarming-democratic-decline-69185">South-East Asia takes stock after a year of alarming democratic decline</a>, the Conversation, December 15th, 2017.</li>
+        <li><a href="http://www.mochfaisalkarim.com/uploads/1/0/2/9/102975644/thinking_asean_-_reinventing_regional_order.pdf">Reinventing East Asia Regional Architecture: a Southeast Asian Perspective</a>, Thinking ASEAN, Issue 17, November 2016.</li>
+        <li><a href="http://www.eastasiaforum.org/2013/08/22/indonesia-should-promote-democracy-globally-starting-with-egypt/">Indonesia should promote democracy globally, starting with Egypt</a>, East Asia Forum, August 22nd, 2013.</li>
+        <li><a href="">Local Politics and the Limits of Micro-Regionalism in Border Areas</a><a href="https://ntsblog.wordpress.com/2013/06/14/local-politics-and-the-limits-of-micro-regionalism-in-border-areas/">https://ntsblog.wordpress.com/2013/06/14/local-politics-and-the-limits-of-micro-regionalism-in-border-areas/</a>, the RSIS Centre for Non Traditional Security (NTS) Studies’ Blog, June 14th, 2013.</li>
+        <li><a href="http://www.responsibilitytoprotect.org/index.php/component/content/article/35-r2pcs-topics/4299-mochammad-faisal-karim-the-jakarta-post-asean-responsibility-to-protect">ASEAN responsibility to protect</a>, the Jakarta Post, August 3rd, 2012.</li>
+      </ol>
+    </div>
+
+    <hr />
+
     <div class="panel panel-default">
       <div class="panel-body">
+        <ol>
+          <li><a href="#journal-articles">Journal Articles</a></li>
+          <li><a href="#book-chapter">Book Chapter</a></li>
+          <li><a href="#under-review">Under Review</a></li>
+          <li><a href="#working-papers">Working Papers</a></li>
+          <li><a href="#comentaries">Comentaries</a></li>
+        </ol>
       </div>
     </div>
 

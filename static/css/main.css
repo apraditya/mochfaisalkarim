@@ -173,6 +173,10 @@ body {
   padding-right: 20px;
 }
 
+#publications .media-list.imageless .media-heading {
+  width: 200px;
+}
+
 #publications h2, #publications h3 {
   text-align: left;
 }
