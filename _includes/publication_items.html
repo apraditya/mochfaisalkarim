@@ -1,0 +1,36 @@
+{% for item in include.publication_items %}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>
+        {{ item.title }}
+        <br />
+        <small>
+          {{ item.intro }}
+          {% if item.url %}
+            &nbsp; | &nbsp;
+            <a href="{{ item.url }}" target="_blank" title="More info"><i class="fa fa-external-link"></i></a>
+          {% endif %}
+          {% if item.pdfUrl %}
+            &nbsp; | &nbsp;
+            <a href="{{ item.pdfUrl }}" target="_blank" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
+          {% endif %}
+        </small>
+      </h3>
+    </div>
+
+    <div class="panel-body">
+      {% if item.imageUrl %}
+        <div class="col-xs-12 col-sm-3">
+          <img class="img-responsive" src="{{ item.imageUrl }}" alt="{{ item.title }}">
+        </div>
+
+        <div class="xs-hidden col-sm-9">
+          <p class="text-justify">{{ item.description }}</p>
+        </div>
+      {% else %}
+        <p class="text-justify">{{ item.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+

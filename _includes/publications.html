@@ -6,13 +6,13 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <ol>
+        <ul>
           <li><a href="#journal-articles">Journal Articles</a></li>
           <li><a href="#book-chapter">Book Chapter</a></li>
           <li><a href="#under-review">Under Review</a></li>
           <li><a href="#working-papers">Working Papers</a></li>
           <li><a href="#comentaries">Comentaries</a></li>
-        </ol>
+        </ul>
       </div>
     </div>
 
@@ -20,127 +20,29 @@
       <h2 class="text-left" id="journal-articles">Journal Articles</h2>
     </div>
 
-    <ul class="media-list">
-      {% for journal in site.data.journals %}
-        <li class="media">
-          <div class="media-left">
-            <a href="#">
-              {% if journal.imageUrl %}
-                <img class="media-object" src="{{ journal.imageUrl }}" alt="{{ journal.title }}">
-              {% endif%}
-            </a>
-          </div>
-          <div class="media-body">
-            <h3 class="media-heading text-left">
-              {{ journal.title }}
-              <br />
-              <small>
-                {{ journal.intro }}
-                {% if journal.url %}
-                  &nbsp; | &nbsp;
-                  <a href="{{ journal.url }}" target="_blank" title="More info"><i class="fa fa-external-link"></i></a>
-                {% endif %}
-                {% if journal.pdfUrl %}
-                  &nbsp; | &nbsp;
-                  <a href="{{ journal.pdfUrl }}" target="_blank" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
-                {% endif %}
-              </small>
-            </h3>
+    {% include publication_items.html publication_items=site.data.journals %}
 
-            <hr />
+    <div class="page-header">
+      <h2 class="text-left" id="book-chapter">Book Chapter</h2>
+    </div>
 
-            <p class="text-justify">{{ journal.description }}</p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
+    {% include publication_items.html publication_items=site.data.book_chapters %}
 
+    <div class="page-header">
+      <h2 class="text-left" id="under-review">Under Review</h2>
+    </div>
 
-    <h2 class="text-left" id="book-chapter">Book Chapter</h2>
+    {% include publication_items.html publication_items=site.data.under_reviews %}
 
-    <ul class="media-list">
-      {% for bookChapter in site.data.book_chapters %}
-        <li class="media">
-          <div class="media-left">
-            <a href="#">
-              {% if bookChapter.imageUrl %}
-                <img class="media-object" src="{{ bookChapter.imageUrl }}" alt="{{ bookChapter.title }}">
-              {% endif%}
-            </a>
-          </div>
-          <div class="media-body">
-            <h3 class="media-heading text-left">
-              {{ bookChapter.title }}
-              <br />
-              <small>
-                {{ bookChapter.intro }}
-                {% if bookChapter.url %}
-                  &nbsp; | &nbsp;
-                  <a href="{{ bookChapter.url }}" target="_blank" title="More info"><i class="fa fa-external-link"></i></a>
-                {% endif %}
-                {% if bookChapter.pdfUrl %}
-                  &nbsp; | &nbsp;
-                  <a href="{{ bookChapter.pdfUrl }}" target="_blank" title="PDF"><i class="fa fa-file-pdf-o"></i></a>
-                {% endif %}
-              </small>
-            </h3>
+    <div class="page-header">
+      <h2 class="text-left" id="working-papers">Working Papers</h2>
+    </div>
 
-            <hr />
+    {% include publication_items.html publication_items=site.data.working_papers %}
 
-            <p class="text-justify">{{ bookChapter.description }}</p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-
-
-    <h2 class="text-left" id="under-review">Under Review</h2>
-
-    <ul class="media-list imageless">
-      {% for review in site.data.under_reviews %}
-        <li class="media">
-          <div class="media-left">
-            <h3 class="media-heading text-left">
-              {{ review.title }}
-              <br />
-              <small>
-                {{ review.intro }}
-              </small>
-            </h3>
-          </div>
-
-          <div class="media-body">
-            <p class="text-justify">{{ review.description }}</p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-
-
-    <h2 class="text-left" id="working-papers">Working Papers</h2>
-
-    <ul class="media-list imageless">
-      {% for workingPaper in site.data.working_papers %}
-        <li class="media">
-          <div class="media-left">
-            <h3 class="media-heading text-left">
-              {{ workingPaper.title }}
-              <br />
-              <small>
-                {{ workingPaper.intro }}
-              </small>
-            </h3>
-          </div>
-
-          <div class="media-body">
-            <p class="text-justify">{{ workingPaper.description }}</p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-
-
-    <h2 class="text-left" id="comentaries">Comentaries</h2>
+    <div class="page-header">
+      <h2 class="text-left" id="comentaries">Comentaries</h2>
+    </div>
 
     <div class="panel-body">
       <ol>
@@ -156,13 +58,13 @@
 
     <div class="panel panel-default">
       <div class="panel-body">
-        <ol>
+        <ul>
           <li><a href="#journal-articles">Journal Articles</a></li>
           <li><a href="#book-chapter">Book Chapter</a></li>
           <li><a href="#under-review">Under Review</a></li>
           <li><a href="#working-papers">Working Papers</a></li>
           <li><a href="#comentaries">Comentaries</a></li>
-        </ol>
+        </ul>
       </div>
     </div>
 
